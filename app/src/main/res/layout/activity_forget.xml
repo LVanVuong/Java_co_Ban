@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".Forget.ForgetActivity">
+
+
+    <EditText
+        android:layout_marginTop="200dp"
+        android:hint="Nhập tài khoản"
+        android:id="@+id/TenTk"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        />
+
+    <EditText
+        android:id="@+id/SoDt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:hint="Nhập số điện thoại"/>
+
+    <Button
+        android:id="@+id/Laylaimk"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Lấy mật khẩu" />
+    <TextView
+        android:id="@+id/Home"
+        android:textColor="#3F51B5"
+        android:textSize="20sp"
+        android:text="Home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+/>
+    <TextView
+        android:id="@+id/Doimk"
+        android:layout_marginTop="10dp"
+        android:textColor="#3F51B5"
+        android:textSize="20sp"
+        android:text="Đổi Mật Khẩu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+</LinearLayout>
