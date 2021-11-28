@@ -1,4 +1,4 @@
-package com.example.java_co_ban.data_local;
+package com.example.java_co_ban.Sign_Up;
 
 import android.content.Context;
 import android.content.SharedPreferences;

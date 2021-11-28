@@ -1,8 +1,8 @@
-package com.example.java_co_ban.Login;
+package com.example.java_co_ban.LoginFrament;
 
 import android.app.Application;
 
-import com.example.java_co_ban.data_local.DataLocal;
+import com.example.java_co_ban.Sign_Up.DataLocal;
 
 public class Myapp extends Application {
     @Override

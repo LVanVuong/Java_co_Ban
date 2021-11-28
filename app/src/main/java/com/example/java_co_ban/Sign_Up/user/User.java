@@ -1,4 +1,4 @@
-package com.example.java_co_ban.data_local.user;
+package com.example.java_co_ban.Sign_Up.user;
 
 public class User {
     private String taikhoan;
@@ -31,10 +31,6 @@ public class User {
         this.taikhoan = taikhoan;
         this.Matkhau = matkhau;
         this.PhoneNumbers = PhoneNumbers;
-    }
-    public  User(){
-        this.taikhoan = "admin";
-        this.Matkhau = "admin";
     }
 
     public String getTaikhoan() {

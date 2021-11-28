@@ -6,7 +6,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:name=".Login.Myapp"
+        android:name=".LoginFrament.Myapp"
         android:allowBackup="true"
         android:icon="@drawable/backgroud"
         android:label="@string/app_name"
@@ -15,6 +15,9 @@
         android:theme="@style/Theme.Java_co_Ban">
 
         <activity
+            android:name=".LoginFrament.LoginFragmentActivity"
+            android:exported="true" />
+        <activity
             android:name=".ChangePassWord.ChangePassWordActivity"
             android:exported="true" />
         <activity
@@ -22,15 +25,14 @@
             android:exported="true" />
         <activity
             android:name=".PlayFilm.PlayFilmActivity"
-            android:exported="true"
             android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
+            android:exported="true"
             android:launchMode="singleTask" />
         <activity
             android:name=".SearchDislay.SearchActivity"
             android:exported="true" />
-
         <activity
-            android:name=".data_local.RegisterActivity"
+            android:name=".Sign_Up.RegisterActivity"
             android:exported="true" />
 
         <service
@@ -40,13 +42,12 @@
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
+        <activity android:name=".Login.LoginActivity"
+            android:exported="true"/>
 
         <activity
-            android:name=".Login.LoginActivity"
-            android:exported="true"/>
-        <activity android:name=".Intro.IntroActivity"
+            android:name=".Intro.IntroActivity"
             android:exported="true">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

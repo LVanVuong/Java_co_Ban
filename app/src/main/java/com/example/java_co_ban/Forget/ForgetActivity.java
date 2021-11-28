@@ -11,10 +11,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.java_co_ban.ChangePassWord.ChangePassWordActivity;
-import com.example.java_co_ban.Login.LoginActivity;
+
+import com.example.java_co_ban.LoginFrament.LoginFragmentActivity;
 import com.example.java_co_ban.R;
-import com.example.java_co_ban.data_local.DataLocal;
-import com.example.java_co_ban.data_local.user.User;
+import com.example.java_co_ban.Sign_Up.DataLocal;
+import com.example.java_co_ban.Sign_Up.user.User;
 
 import java.util.List;
 
@@ -52,7 +53,7 @@ public class ForgetActivity extends AppCompatActivity {
         mHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ForgetActivity.this, LoginActivity.class);
+                Intent intent = new Intent(ForgetActivity.this, LoginFragmentActivity.class);
                 startActivity(intent);
             }
         });

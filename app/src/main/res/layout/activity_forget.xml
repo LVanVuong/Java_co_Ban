@@ -7,31 +7,45 @@
     android:layout_height="wrap_content"
     tools:context=".Forget.ForgetActivity">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:background="@drawable/emilia" />
+
 
     <EditText
-        android:layout_marginTop="200dp"
-        android:hint="Nhập tài khoản"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
         android:id="@+id/TenTk"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="45dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/edit_text"
         android:ems="10"
-        android:inputType="textPersonName"
-        />
+        android:hint="Nhập tài khoản"
+        android:inputType="textPersonName" />
 
     <EditText
         android:id="@+id/SoDt"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="45dp"
         android:layout_marginTop="30dp"
-        android:hint="Nhập số điện thoại"/>
+        android:background="@drawable/edit_text"
+        android:hint="Nhập số điện thoại" />
 
     <Button
         android:id="@+id/Laylaimk"
-        android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/button_bg"
         android:gravity="center"
-        android:text="Lấy mật khẩu" />
+        android:text="Lấy mật khẩu"
+        app:backgroundTint="#B80FE8" />
     <TextView
         android:id="@+id/Home"
         android:textColor="#3F51B5"

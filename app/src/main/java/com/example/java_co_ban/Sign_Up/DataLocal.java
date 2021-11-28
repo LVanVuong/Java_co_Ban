@@ -1,9 +1,9 @@
-package com.example.java_co_ban.data_local;
+package com.example.java_co_ban.Sign_Up;
 
 import android.content.Context;
 import android.util.Log;
 
-import com.example.java_co_ban.data_local.user.User;
+import com.example.java_co_ban.Sign_Up.user.User;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 
