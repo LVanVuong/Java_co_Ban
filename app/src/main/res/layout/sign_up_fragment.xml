@@ -61,6 +61,7 @@
 
     <EditText
 
+        android:inputType="textPassword"
         android:id="@+id/pass_sign_up"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -81,6 +82,7 @@
 
     <EditText
 
+        android:inputType="textPassword"
         android:id="@+id/pass_sign_up_1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"

@@ -1,26 +1,11 @@
 package com.example.java_co_ban.PlayFilm;
 
-import static android.bluetooth.BluetoothGattDescriptor.PERMISSION_READ;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
 
-import android.Manifest;
-import android.app.Notification;
-import android.app.NotificationManager;
-import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
-import android.content.pm.PackageManager;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.media.MediaPlayer;
-import android.os.Build;
 import android.os.Bundle;
-import android.os.CountDownTimer;
 import android.os.Handler;
 import android.util.Log;
 import android.view.View;
@@ -32,16 +17,10 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.VideoView;
 
-import com.example.java_co_ban.Anime.model.ItemFilm;
-import com.example.java_co_ban.Anime.model.ResItemFilm;
+import com.example.java_co_ban.ListFilm.Film;
 import com.example.java_co_ban.R;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.messaging.FirebaseMessaging;
 
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
 
 public class PlayFilmActivity extends AppCompatActivity {
 
@@ -49,7 +28,7 @@ public class PlayFilmActivity extends AppCompatActivity {
     private static String TAG = "PlayFilmActivity";
 
     private VideoView videoView;
-    private int position = 0;
+    private static int position = 0;
     double current_pos, total_duration;
     TextView current, total;
     RelativeLayout relativeLayout;
@@ -58,8 +37,7 @@ public class PlayFilmActivity extends AppCompatActivity {
     SeekBar seekBar;
     ProgressBar videoLoading;
 
-    ResItemFilm mResItemFilm;
-    List<ItemFilm> itemFilms;
+    public  ArrayList<Film> filmsArrayList = new ArrayList<>() ;
     int currentPosition = 0;
 
     LinearLayout showProgress,Show_ConTrol;
@@ -73,63 +51,50 @@ public class PlayFilmActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_play_film);
-        // Dong nay phai chay truoc
-        itemFilms = getListItemFilm();
-        getItemFilmFromIntent();
+
+        GetListFilm();
+//
         initView();
         setupVideo();
 
-        // token
 
 
-        FirebaseMessaging.getInstance().getToken()
-                .addOnCompleteListener(new OnCompleteListener<String>() {
-                    @Override
-                    public void onComplete(@NonNull Task<String> task) {
-                        if (!task.isSuccessful()) {
-                            Log.w(TAG, "Fetching FCM registration token failed", task.getException());
-                            return;
-                        }
 
-                        // Get new FCM registration token
-                        String token = task.getResult();
+//        FirebaseMessaging.getInstance().getToken()
+//                .addOnCompleteListener(new OnCompleteListener<String>() {
+//                    @Override
+//                    public void onComplete(@NonNull Task<String> task) {
+//                        if (!task.isSuccessful()) {
+//                            Log.w(TAG, "Fetching FCM registration token failed", task.getException());
+//                            return;
+//                        }
+//
+//                        // Get new FCM registration token
+//                        String token = task.getResult();
+//
+//                        // Log and toast
+//
+//                        Log.e(TAG, token);
+//                    }
+//                });
+   }
 
-                        // Log and toast
 
-                        Log.e(TAG, token);
-                    }
-                });
-    }
-
-    @Override
-    protected void onNewIntent(Intent intent) {
-        super.onNewIntent(intent);
-        getItemFilmFromIntent();
-    }
-
-    private List<ItemFilm> getListItemFilm() {
-        ResItemFilm resItemFilm = (ResItemFilm) getIntent().getSerializableExtra("key");
-        if (resItemFilm != null) {
-            mResItemFilm = resItemFilm;
-            currentPosition = resItemFilm.getSelectedPosition(); // Vi tri film se play
-            return resItemFilm.getItemFilms(); // danh sach phim
-        }
-        return new ArrayList<>(); // danh sach rong
-    }
-
-    private void getItemFilmFromIntent() {
-        String urlPhim = getIntent().getStringExtra("url_phim");
-        // Chi xu ly khi co url_phim
-        if (urlPhim != null && !urlPhim.equals("")) {
-            // Xu ly them phim vao cuoi danh sach phim, neu nguoi dung dang xem phim ma click vao notification
-            ItemFilm itemFilm = new ItemFilm(-1, "Ten phim", -1L, urlPhim, "tacgia");
-            if (itemFilms == null) {
-                itemFilms = new ArrayList<>();
+    private void GetListFilm() {
+        Intent intent = getIntent();
+        filmsArrayList.clear();
+//        R
+        if(intent != null){
+            if(intent.hasExtra("film")){
+                Film film = intent.getParcelableExtra("film");
+                filmsArrayList.add(film);
             }
-            itemFilms.add(itemFilm);
+            if(intent.hasExtra("mfilm")){
+                ArrayList<Film> mfilmArrayList = intent.getParcelableArrayListExtra("mfilm");
+                filmsArrayList = mfilmArrayList;
+            }
         }
     }
-
     private void initView() {
         videoView = (VideoView) findViewById(R.id.videoview);
         prev = (ImageView) findViewById(R.id.prev);
@@ -149,7 +114,7 @@ public class PlayFilmActivity extends AppCompatActivity {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (currentPosition > itemFilms.size())
+                if (currentPosition > filmsArrayList.size())
                     currentPosition = 0;
                 else currentPosition++;
                 PlayVideo(currentPosition);
@@ -241,7 +206,7 @@ public class PlayFilmActivity extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
                 currentPosition++;
-                if (currentPosition > itemFilms.size())
+                if (currentPosition > filmsArrayList.size())
                     currentPosition = 0;
                 PlayVideo(currentPosition);
             }
@@ -252,8 +217,8 @@ public class PlayFilmActivity extends AppCompatActivity {
     }
 
     public void PlayVideo(int position) {
-        ItemFilm item = itemFilms.get(position);
-        String videoURL = item.getLinkFilm() == "" ? VideoViewUtils.URL_VIDEO_SAMPLE : item.getLinkFilm();
+        Film film = filmsArrayList.get(position);
+        String videoURL = film.getLinkfilm() == "" ? VideoViewUtils.URL_VIDEO_SAMPLE : film.getLinkfilm();
         videoLoading.setVisibility(View.VISIBLE);
         VideoViewUtils.playURLVideo(PlayFilmActivity.this, videoView, videoURL);
         pause.setImageResource(R.drawable.pause_two);

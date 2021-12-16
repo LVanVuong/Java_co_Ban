@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="5dp"
+    android:elevation="5dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardview"
+            app:cardCornerRadius="100dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"   >
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:id="@+id/Imagetheloai"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginLeft="0dp"
+                android:src="@drawable/emilia" />
+        </androidx.cardview.widget.CardView>
+
+
+        <TextView
+            android:id="@+id/Tentheloai"
+            android:layout_width="245dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginStart="18dp"
+            android:layout_marginLeft="18dp"
+            android:layout_marginEnd="19dp"
+            android:layout_marginRight="19dp"
+            android:layout_toEndOf="@+id/cardview"
+            android:layout_toRightOf="@+id/cardview"
+            android:ellipsize="end"
+            android:maxWidth="250dp"
+            android:maxLines="1"
+            android:text="Tên Thể loại"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tentheloai"
+            android:layout_width="253dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/Tentheloai"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginStart="21dp"
+            android:layout_marginLeft="21dp"
+            android:layout_marginTop="11dp"
+            android:layout_marginEnd="19dp"
+            android:layout_marginRight="19dp"
+            android:layout_toEndOf="@+id/cardview"
+            android:layout_toRightOf="@+id/cardview"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="tác giả"
+            android:textColor="#595454"
+            android:textSize="20sp" />
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

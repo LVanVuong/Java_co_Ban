@@ -39,6 +39,7 @@ public class DataLocal {
         setListUser(users);
     }
 
+
     private static void setListUser(List<User> listuser) {
         Gson gson = new Gson();
         JsonArray jsonArray = gson.toJsonTree(listuser).getAsJsonArray();
@@ -66,4 +67,6 @@ public class DataLocal {
         }
         return listUser;
     }
+
+
 }

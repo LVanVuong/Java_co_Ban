@@ -13,14 +13,22 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.java_co_ban.Forget.ForgetActivity;
 import com.example.java_co_ban.R;
-import com.example.java_co_ban.SearchDislay.SearchActivity;
+import com.example.java_co_ban.SearchDislay.ListTopicActivity;
+//import com.example.java_co_ban.SearchDislay.SearchActivity;
 import com.example.java_co_ban.Sign_Up.DataLocal;
 import com.example.java_co_ban.Sign_Up.user.User;
+
+import com.facebook.CallbackManager;
+import com.facebook.FacebookSdk;
+import com.facebook.appevents.AppEventsLogger;
+import com.facebook.login.widget.LoginButton;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.List;
 
@@ -29,6 +37,7 @@ public class LoginFragment extends Fragment {
     SharedPreferences sharedPreferences;
     EditText UserName, Password;
     TextView Forget_Password;
+    public static ImageView facebook;
     Button Login;
     CheckBox checkbox;
 
@@ -44,6 +53,8 @@ public class LoginFragment extends Fragment {
         Forget_Password = root.findViewById(R.id.forget);
         Login = root.findViewById(R.id.button);
         checkbox = root.findViewById(R.id.checkbox);
+        facebook = root.findViewById(R.id.facebook);
+
 
         sharedPreferences = getContext().getSharedPreferences("data",Context.MODE_PRIVATE);
 
@@ -54,8 +65,22 @@ public class LoginFragment extends Fragment {
         dangnhap();
         Forget_Password();
 
+        setupLoginFb();
         return root;
     }
+
+    private void setupLoginFb() {
+       facebook.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               Intent intent = new Intent(getActivity(),FacebookActivity.class);
+               startActivity(intent);
+           }
+       });
+
+
+    }
+
 
     private void dangnhap() {
         Login.setOnClickListener(new View.OnClickListener() {
@@ -70,7 +95,7 @@ public class LoginFragment extends Fragment {
                 // Tài khoản mặc định
                 if (username.equals(name) && password.equals(pass)) {
                     CheckBox(checkbox, username, password);
-                    Intent intent = new Intent(getActivity(), SearchActivity.class);
+                    Intent intent = new Intent(getActivity(), ListTopicActivity.class);
                     startActivity(intent);
 
                     // tài khoản trong danh sách đăng kí
@@ -78,7 +103,7 @@ public class LoginFragment extends Fragment {
                     Toast.makeText(getActivity(), "đăng nhập thành công", Toast.LENGTH_LONG).show();
                     // nếu có check
                     CheckBox(checkbox, username, password);
-                    Intent intent = new Intent(getActivity(), SearchActivity.class);
+                    Intent intent = new Intent(getActivity(), ListTopicActivity.class);
                     startActivity(intent);
 
                 } else {
@@ -126,4 +151,5 @@ public class LoginFragment extends Fragment {
             }
         });
     }
+
 }

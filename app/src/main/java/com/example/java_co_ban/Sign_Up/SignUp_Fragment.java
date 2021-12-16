@@ -15,7 +15,8 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.java_co_ban.R;
-import com.example.java_co_ban.SearchDislay.SearchActivity;
+import com.example.java_co_ban.SearchDislay.ListTopicActivity;
+//import com.example.java_co_ban.SearchDislay.SearchActivity;
 import com.example.java_co_ban.Sign_Up.user.User;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -83,7 +84,7 @@ public class SignUp_Fragment extends Fragment {
                     DataLocal.setUser(user);
                     Toast.makeText(getActivity(), "đăng kí thành công", Toast.LENGTH_LONG).show();
 
-                    Intent intent = new Intent(getActivity(),SearchActivity.class);
+                    Intent intent = new Intent(getActivity(), ListTopicActivity.class);
                     startActivity(intent);
                 }
                 if (kiemTraTaiKhoan(username, listUser)) {
@@ -178,7 +179,7 @@ public class SignUp_Fragment extends Fragment {
             @Override
             public void onSuccess(AuthResult authResult) {
                 Toast.makeText(getActivity(), "Success", Toast.LENGTH_LONG).show();
-                Intent intent = new Intent(getActivity(), SearchActivity.class);
+                Intent intent = new Intent(getActivity(), ListTopicActivity.class);
                 startActivity(intent);
 
             }
