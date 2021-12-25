@@ -26,15 +26,7 @@
         android:hint="Nhập tài khoản"
         android:inputType="textPersonName" />
 
-    <EditText
-        android:id="@+id/SoDt"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:layout_marginTop="30dp"
-        android:background="@drawable/edit_text"
-        android:hint="Nhập số điện thoại" />
+
 
     <Button
         android:id="@+id/Laylaimk"
@@ -46,20 +38,4 @@
         android:gravity="center"
         android:text="Lấy mật khẩu"
         app:backgroundTint="#B80FE8" />
-    <TextView
-        android:id="@+id/Home"
-        android:textColor="#3F51B5"
-        android:textSize="20sp"
-        android:text="Home"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-/>
-    <TextView
-        android:id="@+id/Doimk"
-        android:layout_marginTop="10dp"
-        android:textColor="#3F51B5"
-        android:textSize="20sp"
-        android:text="Đổi Mật Khẩu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
 </LinearLayout>

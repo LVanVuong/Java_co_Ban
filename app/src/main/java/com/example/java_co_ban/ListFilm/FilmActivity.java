@@ -1,7 +1,5 @@
 package com.example.java_co_ban.ListFilm;
 
-import androidx.annotation.ColorInt;
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
@@ -21,7 +19,7 @@ import android.os.StrictMode;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.example.java_co_ban.SearchDislay.Theloai;
+import com.example.java_co_ban.ListTopic.Theloai;
 import com.example.java_co_ban.Sever.APIService;
 import com.example.java_co_ban.Sever.Dataservice;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
@@ -45,7 +43,7 @@ public class FilmActivity extends AppCompatActivity {
     CoordinatorLayout coordinatorLayout;
     Toolbar toolbar;
     Theloai theloai;
-    ImageView view;
+    ImageView imageView;
 
 
     public static ArrayList<Film> filmArrayList;
@@ -80,6 +78,7 @@ public class FilmActivity extends AppCompatActivity {
     private void setValueInView(String ten, String hinh) {
         collapsingToolbarLayout.setTitle(ten);
 
+
         try {
             URL url = new URL(hinh);
             Bitmap bitmap = BitmapFactory.decodeStream(url.openConnection().getInputStream());
@@ -90,7 +89,7 @@ public class FilmActivity extends AppCompatActivity {
         } catch (IOException e) {
             e.printStackTrace();
         }
-      //  Picasso.with(this).load(hinh).into(view);
+       Picasso.with(this).load(hinh).into(imageView);
     }
 
     private void GetDataTheLoai (String idtheloai) {
@@ -128,6 +127,7 @@ public class FilmActivity extends AppCompatActivity {
         coordinatorLayout = findViewById(R.id.coordinatorlayout);
         collapsingToolbarLayout = findViewById(R.id.collapsingtoolbar);
         toolbar = findViewById(R.id.toolbarfilm);
+        imageView = findViewById(R.id.view);
         recyclerViewfilm = findViewById(R.id.listfilm);
 
     }

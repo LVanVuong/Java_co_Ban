@@ -65,6 +65,7 @@
             android:layout_marginBottom="16dp"
             android:backgroundTint="@color/white"
             android:src="@drawable/next" />
+
     </RelativeLayout>
 
 

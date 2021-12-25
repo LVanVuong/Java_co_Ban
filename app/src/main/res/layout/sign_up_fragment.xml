@@ -12,7 +12,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@drawable/edit_text"
-        android:hint="Username"
+        android:hint="Email"
         android:paddingLeft="20dp"
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
@@ -59,103 +59,74 @@
         app:layout_constraintWidth_percent=".6"
         tools:ignore="MissingConstraints" />
 
-    <EditText
-
-        android:inputType="textPassword"
-        android:id="@+id/pass_sign_up"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textinput_sign_up"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         android:background="@drawable/edit_text"
-        android:hint="Password"
-        android:paddingLeft="20dp"
-        android:paddingTop="10dp"
-        android:paddingBottom="10dp"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/phone"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_bias="0.032"
+        app:passwordToggleEnabled="true"
         app:layout_constraintWidth_percent=".8"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints">
 
     <EditText
-
+        android:id="@+id/pass_sign_up"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/edit_text"
+        android:hint="Password"
         android:inputType="textPassword"
-        android:id="@+id/pass_sign_up_1"
+        android:maxLines="1" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textinput_sign_up1"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         android:background="@drawable/edit_text"
-        android:hint="Conform Password"
-        android:paddingLeft="20dp"
-        android:paddingTop="10dp"
-        android:paddingBottom="10dp"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pass_sign_up"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintTop_toBottomOf="@+id/textinput_sign_up"
+        app:layout_constraintVertical_bias="0.032"
+        app:passwordToggleEnabled="true"
         app:layout_constraintWidth_percent=".8"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints">
 
-    <EditText
+        <EditText
+            android:id="@+id/pass_sign_up_1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/edit_text"
+            android:hint="Confirm Password"
+            android:inputType="textPassword"
+            android:maxLines="1" />
+    </com.google.android.material.textfield.TextInputLayout>
+<!--    <EditText-->
 
-        android:id="@+id/Otp"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/edit_text"
-        android:hint="OTP"
-        android:paddingLeft="20dp"
-        android:paddingTop="10dp"
-        android:paddingBottom="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.165"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pass_sign_up_1"
-        app:layout_constraintVertical_bias="0.0"
-        app:layout_constraintWidth_percent=".4"
-        tools:ignore="MissingConstraints" />
-
-    <Button
-
-        android:id="@+id/send_otp"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="2dp"
-        android:layout_marginTop="20dp"
-        app:backgroundTint="#03F40F"
-        android:background="@drawable/button_bg"
-        android:text="Send_Otp"
-        android:textColor="@color/white"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.35"
-        app:layout_constraintStart_toEndOf="@+id/Otp"
-        app:layout_constraintTop_toBottomOf="@+id/pass_sign_up_1"
-        app:layout_constraintVertical_bias="0.0"
-        app:layout_constraintWidth_percent=".4" />
-
-    <TextView
-        android:id="@+id/resend"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:text="Didn't receive otp code ? Resend"
-        android:textColor="#0037FF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-
-        app:layout_constraintHorizontal_bias="0.465"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Otp"
-        app:layout_constraintVertical_bias="0.0" />
+<!--        android:inputType="textPassword"-->
+<!--        android:id="@+id/pass_sign_up_1"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:background="@drawable/edit_text"-->
+<!--        android:hint="Conform Password"-->
+<!--        android:paddingLeft="20dp"-->
+<!--        android:paddingTop="10dp"-->
+<!--        android:paddingBottom="10dp"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.493"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/textinput_sign_up"-->
+<!--        app:layout_constraintVertical_bias="0.0"-->
+<!--        app:layout_constraintWidth_percent=".8"-->
+<!--        tools:ignore="MissingConstraints" />-->
 
     <Button
         android:id="@+id/button12"
@@ -172,7 +143,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/resend"
+        app:layout_constraintTop_toBottomOf="@+id/textinput_sign_up1"
         app:layout_constraintVertical_bias="0.97"
         app:layout_constraintWidth_percent=".8" />
 

@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import com.example.java_co_ban.LoginFrament.LoginFragmentActivity;
 import com.example.java_co_ban.R;
+import com.example.java_co_ban.fcm.NextLogin;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class IntroFragment extends Fragment {
@@ -30,7 +31,7 @@ public class IntroFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Log.e(TAG,"haha");
-                Intent intent = new Intent(getActivity(), LoginFragmentActivity.class);
+                Intent intent = new Intent(getActivity(), NextLogin.class);
 
                 startActivity(intent);
             }

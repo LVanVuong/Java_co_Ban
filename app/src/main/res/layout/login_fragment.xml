@@ -23,25 +23,31 @@
         app:layout_constraintVertical_bias="0.048"
         app:layout_constraintWidth_percent=".8" />
 
-    <EditText
-
-        android:id="@+id/pass"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textinput"
         android:layout_width="0dp"
         android:background="@drawable/edit_text"
         android:layout_height="wrap_content"
-        android:hint="Password"
-        android:paddingLeft="20dp"
-        android:inputType="textPassword"
-        android:paddingTop="10dp"
-        android:paddingBottom="10dp"
-        app:layout_constraintVertical_bias="0"
-        android:layout_marginTop="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/email"
-        app:layout_constraintWidth_percent=".8" />
+        app:layout_constraintVertical_bias="0.032"
+        app:passwordToggleEnabled="true"
+        app:layout_constraintWidth_percent=".8"
+        tools:ignore="MissingConstraints">
+
+        <EditText
+            android:id="@+id/pass"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/edit_text"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:maxLines="1" />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/button"
@@ -65,15 +71,15 @@
         android:id="@+id/forget"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Forget Password"
-        app:layout_constraintVertical_bias="0"
-        app:layout_constraintHorizontal_bias="1"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="87dp"
         android:layout_marginRight="5dp"
+        android:text="Forget Password"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/pass"
+        app:layout_constraintEnd_toEndOf="@+id/textinput"
+        app:layout_constraintHorizontal_bias="1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pass" />
+        app:layout_constraintTop_toTopOf="@+id/textinput"
+        app:layout_constraintVertical_bias="0" />
 
     <CheckBox
         android:id="@+id/checkbox"
@@ -85,7 +91,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.113"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pass"
+        app:layout_constraintTop_toBottomOf="@+id/textinput"
         app:layout_constraintVertical_bias="0.09" />
 
     <ImageView
@@ -94,33 +100,11 @@
         android:layout_height="45dp"
         android:layout_marginTop="40dp"
         android:src="@drawable/google_two"
+        app:layout_constraintVertical_bias="1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.645"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button" />
-
-    <ImageView
-        android:id="@+id/facebook"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="40dp"
-        android:src="@drawable/facebook"
-        app:layout_constraintEnd_toStartOf="@+id/google"
-        app:layout_constraintHorizontal_bias="0.6"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button"
-        tools:ignore="MissingConstraints" />
-
-<!--    <ImageView-->
-<!--        android:id="@+id/twiter"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginTop="40dp"-->
-<!--        android:src="@drawable/twitter"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="0.4"-->
-<!--        app:layout_constraintStart_toEndOf="@+id/google"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/button" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

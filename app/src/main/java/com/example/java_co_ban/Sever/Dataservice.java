@@ -1,7 +1,7 @@
 package com.example.java_co_ban.Sever;
 
 import com.example.java_co_ban.ListFilm.Film;
-import com.example.java_co_ban.SearchDislay.Theloai;
+import com.example.java_co_ban.ListTopic.Theloai;
 
 import java.util.List;
 

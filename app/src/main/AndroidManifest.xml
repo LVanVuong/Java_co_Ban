@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.java_co_ban" >
+    package="com.example.java_co_ban">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:name=".LoginFrament.Myapp"
@@ -12,22 +13,24 @@
         android:label="@string/app_name"
         android:roundIcon="@drawable/emilia"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Java_co_Ban" >
+        android:theme="@style/Theme.Java_co_Ban">
         <activity
-            android:name=".SearchDislay.ListTopicActivity"
+            android:name=".Navigation.MainActivity"
+            android:exported="true" />
+        <activity
+            android:name=".fcm.NextLogin"
+            android:exported="true" />
+
+        <activity
+            android:name=".fcm.SplashActivity"
             android:exported="true" />
         <activity
             android:name=".ListFilm.FilmActivity"
             android:exported="true" />
         <activity
-            android:name=".LoginFrament.FacebookActivity"
-            android:exported="true" />
-        <activity
             android:name=".LoginFrament.LoginFragmentActivity"
             android:exported="true" />
-        <activity
-            android:name=".ChangePassWord.ChangePassWordActivity"
-            android:exported="true" />
+
         <activity
             android:name=".Forget.ForgetActivity"
             android:exported="true" />
@@ -36,13 +39,10 @@
             android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
             android:exported="true"
             android:launchMode="singleTask" />
-        <activity
-            android:name=".SearchDislay.SearchActivity"
-            android:exported="true" />
 
         <service
             android:name=".fcm.MyFirebaseMessagingService"
-            android:exported="false" >
+            android:exported="false">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
@@ -50,18 +50,16 @@
 
         <activity
             android:name=".Intro.IntroActivity"
-            android:exported="true" >
+            android:exported="true" />
+        <activity
+            android:name=".Intro.IntroVideo"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Anime.AnimeActivity" />
-
-        <meta-data
-            android:name="com.facebook.sdk.ApplicationId"
-            android:value="@string/facebook_app_id" />
     </application>
 
 </manifest>

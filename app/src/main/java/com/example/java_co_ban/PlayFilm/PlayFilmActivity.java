@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
@@ -114,9 +115,9 @@ public class PlayFilmActivity extends AppCompatActivity {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (currentPosition > filmsArrayList.size())
+                currentPosition++;
+                if (currentPosition >= filmsArrayList.size())
                     currentPosition = 0;
-                else currentPosition++;
                 PlayVideo(currentPosition);
             }
         });
@@ -138,6 +139,8 @@ public class PlayFilmActivity extends AppCompatActivity {
                 //int a = 0;
                 if (!isFullScreen) {
                     PlayFilmActivity.this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+                    getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                            WindowManager.LayoutParams.FLAG_FULLSCREEN);
                     hideSystemUI();
                     isFullScreen = true;
                 } else {

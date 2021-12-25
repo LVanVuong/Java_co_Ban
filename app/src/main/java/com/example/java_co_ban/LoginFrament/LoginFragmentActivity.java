@@ -11,7 +11,7 @@ import android.view.View;
 import com.example.java_co_ban.Intro.ViewPager2Adapter;
 import com.example.java_co_ban.R;
 //import com.example.java_co_ban.SearchDislay.ImageAdapter;
-import com.facebook.CallbackManager;
+
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
@@ -20,10 +20,6 @@ public class LoginFragmentActivity extends AppCompatActivity {
 
     TabLayout tabLayout;
     ViewPager2 viewPager2;
-//    View facebook;
-//    View google;
-    private FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
-    private CallbackManager fbcallbackManager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,8 +27,6 @@ public class LoginFragmentActivity extends AppCompatActivity {
 
         tabLayout =findViewById(R.id.tab_layout);
         viewPager2 = findViewById(R.id.view_pager2);
-//        facebook = findViewById(R.id.facebook_one);
-//        google = findViewById(R.id.google_one);
 
 
         tabLayout.addTab(tabLayout.newTab().setText("Login"));

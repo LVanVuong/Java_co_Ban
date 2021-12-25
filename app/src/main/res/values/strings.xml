@@ -4,7 +4,14 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
-    <string name="facebook_app_id">954265231855397</string>
-    <string name="fb_login_protocol_scheme">fb954265231855397</string>
+    <string name="nav_home" >Home</string>
+    <string name="nav_account" >Account</string>
+    <string name="nav_change_password" >Change Password</string>
+    <string name="nav_my_profile" >My Profile</string>
+    <string name="nav_logout" >Log Out</string>
+
+    <string name="nav_drawer_open" >Open navication drawer</string>
+    <string name="nav_drawer_close" >Close navication drawer</string>
+
 
 </resources>

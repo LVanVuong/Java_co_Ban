@@ -18,17 +18,20 @@
         <entry key="..\:/Users/Admin/AndroidStudioProjects/Java_co_Ban/app/src/main/res/layout/activity_film.xml" value="0.176" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/Java_co_Ban/app/src/main/res/layout/activity_for_get.xml" value="0.20219298245614034" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/Java_co_Ban/app/src/main/res/layout/activity_forget.xml" value="0.21403508771929824" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/Java_co_Ban/app/src/main/res/layout/activity_home.xml" value="0.12192982456140351" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/Java_co_Ban/app/src/main/res/layout/activity_intro.xml" value="0.13903508771929823" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/Java_co_Ban/app/src/main/res/layout/activity_list_topic.xml" value="0.21403508771929824" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/Java_co_Ban/app/src/main/res/layout/activity_login.xml" value="0.264" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/Java_co_Ban/app/src/main/res/layout/activity_login_fragment.xml" value="0.2" />
-        <entry key="..\:/Users/Admin/AndroidStudioProjects/Java_co_Ban/app/src/main/res/layout/activity_main.xml" value="0.152" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/Java_co_Ban/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/Java_co_Ban/app/src/main/res/layout/activity_main2.xml" value="0.21403508771929824" />
-        <entry key="..\:/Users/Admin/AndroidStudioProjects/Java_co_Ban/app/src/main/res/layout/activity_play_film.xml" value="0.4537275064267352" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/Java_co_Ban/app/src/main/res/layout/activity_new_bie.xml" value="0.21096491228070174" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/Java_co_Ban/app/src/main/res/layout/activity_play_film.xml" value="0.4" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/Java_co_Ban/app/src/main/res/layout/activity_register.xml" value="0.21403508771929824" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/Java_co_Ban/app/src/main/res/layout/activity_search.xml" value="0.125" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/Java_co_Ban/app/src/main/res/layout/activity_second.xml" value="0.176" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/Java_co_Ban/app/src/main/res/layout/activity_sen_otp.xml" value="0.21403508771929824" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/Java_co_Ban/app/src/main/res/layout/activity_splash.xml" value="0.21403508771929824" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/Java_co_Ban/app/src/main/res/layout/activity_three.xml" value="0.14868421052631578" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/Java_co_Ban/app/src/main/res/layout/activity_veryfi_phone.xml" value="0.20219298245614034" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/Java_co_Ban/app/src/main/res/layout/activity_video.xml" value="0.21403508771929824" />
@@ -36,14 +39,19 @@
         <entry key="..\:/Users/Admin/AndroidStudioProjects/Java_co_Ban/app/src/main/res/layout/fragment_blank.xml" value="0.11052631578947368" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/Java_co_Ban/app/src/main/res/layout/fragment_list_topic.xml" value="0.2" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/Java_co_Ban/app/src/main/res/layout/fragment_login.xml" value="0.21403508771929824" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/Java_co_Ban/app/src/main/res/layout/fragment_profile.xml" value="0.264" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/Java_co_Ban/app/src/main/res/layout/intro.xml" value="0.21403508771929824" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/Java_co_Ban/app/src/main/res/layout/intro_minion.xml" value="0.264" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/Java_co_Ban/app/src/main/res/layout/iteam_file.xml" value="0.2" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/Java_co_Ban/app/src/main/res/layout/itemfilm.xml" value="0.264" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/Java_co_Ban/app/src/main/res/layout/layout_header.xml" value="0.4" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/Java_co_Ban/app/src/main/res/layout/listfilm.xml" value="0.2" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/Java_co_Ban/app/src/main/res/layout/login_fragment.xml" value="0.264" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/Java_co_Ban/app/src/main/res/layout/sign_up_fragment.xml" value="0.176" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/Java_co_Ban/app/src/main/res/layout/test.xml" value="0.21403508771929824" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/Java_co_Ban/app/src/main/res/layout/videolist.xml" value="0.20219298245614034" />
-        <entry key="..\:/Users/Admin/AndroidStudioProjects/Java_co_Ban/app/src/main/res/menu/main_menufilm.xml" value="0.1" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/Java_co_Ban/app/src/main/res/menu/main_menu_nav.xml" value="0.21096491228070174" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/Java_co_Ban/app/src/main/res/menu/main_menufilm.xml" value="0.16" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/Java_co_Ban/app/src/main/res/menu/memu.xml" value="0.1" />
       </map>
     </option>

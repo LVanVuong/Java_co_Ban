@@ -1,50 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".ChangePassWord.ChangePassWordActivity">
-    <EditText
+    android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/textview"
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:background="@drawable/emilia"
+        tools:ignore="MissingConstraints" />
+
+
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_marginTop="30dp"
-        android:id="@+id/users"
-        android:hint = "Tên tài khoản"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-    <EditText
-        android:layout_marginTop="30dp"
-        android:layout_width="match_parent"
+        app:layout_constraintTop_toBottomOf="@+id/textview"
+        android:id="@+id/textinput_changepass"
+        android:layout_width="0dp"
+        android:background="@drawable/edit_text"
         android:layout_height="wrap_content"
-        android:hint="Mật khẩu cũ"
-        android:id="@+id/MKold"/>
-    <EditText
-        android:layout_marginTop="30dp"
-        android:layout_width="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_bias="0.032"
+        app:passwordToggleEnabled="true"
+        app:layout_constraintWidth_percent=".8"
+        tools:ignore="MissingConstraints">
+
+        <EditText
+            android:id="@+id/Mknew"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/edit_text"
+            android:hint="New Password"
+            android:inputType="textPassword"
+            android:maxLines="1" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textinput_changepass1"
+        android:layout_width="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/textinput_changepass"
+        android:background="@drawable/edit_text"
         android:layout_height="wrap_content"
-        android:hint="Mật khẩu mới"
-        android:id="@+id/Mknew"/>
-    <EditText
-        android:layout_marginTop="30dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/Nlmknew"
-        android:hint="Nhập lại mật khẩu"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_bias="0.032"
+        app:passwordToggleEnabled="true"
+        app:layout_constraintWidth_percent=".8"
+        tools:ignore="MissingConstraints">
+
+        <EditText
+            android:id="@+id/Nlmknew"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/edit_text"
+            android:hint="Confirm Password"
+            android:inputType="textPassword"
+            android:maxLines="1" />
+    </com.google.android.material.textfield.TextInputLayout>
+
     <Button
         android:id="@+id/change"
+        android:layout_width="174dp"
+        android:layout_height="52dp"
         android:layout_gravity="center"
         android:layout_marginTop="30dp"
+        android:background="@drawable/button_bg"
         android:text="Change"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-    <TextView
-        android:paddingLeft="10dp"
-        android:id="@+id/mhome"
-        android:text="Home"
-        android:textSize="20sp"
-        android:textColor="#3F51B5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textinput_changepass1"
+        app:layout_constraintVertical_bias="0.032"
+        app:layout_constraintWidth_percent=".8"
+        app:passwordToggleEnabled="true" />
 
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
