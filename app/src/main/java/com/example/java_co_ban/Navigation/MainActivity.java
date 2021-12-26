@@ -31,6 +31,11 @@ import com.example.java_co_ban.LoginFrament.LoginFragment;
 import com.example.java_co_ban.LoginFrament.LoginFragmentActivity;
 import com.example.java_co_ban.R;
 import com.example.java_co_ban.ListTopic.ListTopicFragment;
+import com.google.android.gms.auth.api.signin.GoogleSignInApi;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -46,12 +51,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     private DrawerLayout mDrawerLayout;
     private NavigationView navigationView;
-
     private int mCurrentFragment = FRAGMENT_HOME;
     final private ProfileFragment profileFragment = new ProfileFragment();
     private ImageView imageAvatar;
     private TextView name, email;
-
+    private  FirebaseAuth mAuth = FirebaseAuth.getInstance();
 
     final private ActivityResultLauncher<Intent> activityResultLauncher = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),
@@ -98,8 +102,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         replaceFragment(new ListTopicFragment());
         navigationView.getMenu().findItem(R.id.nav_home).setChecked(true);
+
         ShowInformation(null);
     }
+
+
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -125,7 +132,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
 
         } else if (id == R.id.nav_Logout) {
-            FirebaseAuth.getInstance().signOut();
+            mAuth.signOut();
             Intent intent = new Intent(MainActivity.this, LoginFragmentActivity.class);
             startActivity(intent);
         }
@@ -136,6 +143,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         return true;
     }
+
 
 
     @Override
@@ -179,7 +187,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     public void ShowInformation(String imgUrl) {
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        FirebaseUser user = mAuth.getCurrentUser();
         if (user == null) {
             return;
         }

@@ -14,6 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.example.java_co_ban.LoginFrament.LoginFragment;
 import com.example.java_co_ban.Navigation.MainActivity;
 import com.example.java_co_ban.R;
 import com.example.java_co_ban.ListTopic.ListTopicFragment;
@@ -39,6 +40,7 @@ public class SignUp_Fragment extends Fragment {
 
     EditText taikhoan, matkhau, nlmatkhau, PhoneNumber , region;
     Button  Sign_UP;
+
 
 
 
@@ -68,10 +70,12 @@ public class SignUp_Fragment extends Fragment {
                 String username = taikhoan.getText().toString().trim();
                 String password = matkhau.getText().toString().trim();
                 String password2 = nlmatkhau.getText().toString().trim();
-                if(username == null || password == null){
-                    Toast.makeText(getActivity(),"Vui lòng nhập email hoặc mật khẩu",Toast.LENGTH_SHORT).show();
-                } else {
-                    if (password.equals(password2)) {
+                if(username.isEmpty()){
+                    Toast.makeText(getActivity(),"Vui lòng nhập email ",Toast.LENGTH_SHORT).show();
+                } else if(password.isEmpty() || password2.isEmpty()) {
+                    Toast.makeText(getActivity(),"Vui lòng nhập mật khẩu ",Toast.LENGTH_SHORT).show();
+                }
+                   else if (password.equals(password2)) {
                             onClickSignUp();
                     }
                      else {
@@ -79,7 +83,6 @@ public class SignUp_Fragment extends Fragment {
                     }
                 }
 
-            }
         });
     }
     private void onClickSignUp(){

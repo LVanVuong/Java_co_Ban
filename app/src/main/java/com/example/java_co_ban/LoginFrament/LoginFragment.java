@@ -21,6 +21,7 @@ import android.widget.Toast;
 
 import com.example.java_co_ban.Forget.ForgetActivity;
 
+import com.example.java_co_ban.Navigation.MainActivity;
 import com.example.java_co_ban.Navigation.ProfileFragment;
 import com.example.java_co_ban.R;
 
@@ -57,8 +58,10 @@ public class LoginFragment extends Fragment {
     ImageView google;
     Button Login;
     CheckBox checkbox;
-   GoogleSignInClient mGoogleSignInClient;
+    String emaill,password;
+     GoogleSignInClient mGoogleSignInClient;
     FirebaseAuth firebaseAuth;
+    private MainActivity mainActivity = new MainActivity();
     private ProgressDialog progressDialog;
 
     @Override
@@ -72,7 +75,7 @@ public class LoginFragment extends Fragment {
         Forget_Password = root.findViewById(R.id.forget);
         Login = root.findViewById(R.id.button);
         checkbox = root.findViewById(R.id.checkbox);
-        google = root.findViewById(R.id.google);
+//        google = root.findViewById(R.id.google);
 
 
         sharedPreferences = getContext().getSharedPreferences("data", Context.MODE_PRIVATE);
@@ -84,7 +87,6 @@ public class LoginFragment extends Fragment {
         if(CheckingNetwork.isNetworkAvailable(getActivity())){
             dangnhap();
             Forget_Password();
-            LoginGoogle();
         } else {
             Toast.makeText(getActivity(),"Internet Disconnected",Toast.LENGTH_LONG).show();
         }
@@ -94,70 +96,71 @@ public class LoginFragment extends Fragment {
         return root;
     }
 
-    private void LoginGoogle() {
-        // Configure Google Sign In
-        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken(getString(R.string.default_web_client_id))// Note: don't false.
-                .requestEmail()
-                .build();
 
-        mGoogleSignInClient = GoogleSignIn.getClient(getActivity(), gso);
-        google.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = mGoogleSignInClient.getSignInIntent();
-                startActivityForResult(intent, RC_SIGN_IN);
-            }
-        });
-
-    }
-
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        if (requestCode == RC_SIGN_IN) {
-            Task<GoogleSignInAccount> googleSignInClientTask = GoogleSignIn.getSignedInAccountFromIntent(data);
-            try {
-                GoogleSignInAccount account = googleSignInClientTask.getResult(ApiException.class);
-                firebaseAuthWithGoogleAccount(account);
-
-            } catch (Exception e) {
-
-            }
-        }
-    }
-
-    private void firebaseAuthWithGoogleAccount(GoogleSignInAccount account) {
-        AuthCredential credential = GoogleAuthProvider.getCredential(account.getIdToken(), null);
-        firebaseAuth.signInWithCredential(credential)
-                .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
-                    FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
-                    String uid = firebaseUser.getUid();
-                    String email = firebaseUser.getEmail();
-
-                    @Override
-                    public void onSuccess(AuthResult authResult) {
-
-
-                        if (authResult.getAdditionalUserInfo().isNewUser()) {
-                            Toast.makeText(getActivity(), "Account Created...\n" + email, Toast.LENGTH_SHORT).show();
-                        } else {
-
-                            Toast.makeText(getActivity(), "Login User...\n" + email, Toast.LENGTH_SHORT).show();
-                        }
-                        startActivity(new Intent(getActivity(), SplashActivity.class));
-
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-
-
-                    }
-                });
-    }
+//    private void LoginGoogle() {
+//        // Configure Google Sign In
+//        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+//                .requestIdToken(getString(R.string.default_web_client_id))// Note: don't false.
+//                .requestEmail()
+//                .build();
+//
+//        mGoogleSignInClient = GoogleSignIn.getClient(getActivity(), gso);
+//        google.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = mGoogleSignInClient.getSignInIntent();
+//                startActivityForResult(intent, RC_SIGN_IN);
+//            }
+//        });
+//
+//    }
+//
+//    @Override
+//    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+//        super.onActivityResult(requestCode, resultCode, data);
+//
+//        if (requestCode == RC_SIGN_IN) {
+//            Task<GoogleSignInAccount> googleSignInClientTask = GoogleSignIn.getSignedInAccountFromIntent(data);
+//            try {
+//                GoogleSignInAccount account = googleSignInClientTask.getResult(ApiException.class);
+//                firebaseAuthWithGoogleAccount(account);
+//
+//            } catch (Exception e) {
+//
+//            }
+//        }
+//    }
+//
+//    private void firebaseAuthWithGoogleAccount(@NonNull GoogleSignInAccount account) {
+//        AuthCredential credential = GoogleAuthProvider.getCredential(account.getIdToken(), null);
+//        firebaseAuth.signInWithCredential(credential)
+//                .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
+//                    FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
+//                    String uid = firebaseUser.getUid();
+//                    String email = firebaseUser.getEmail();
+//
+//                    @Override
+//                    public void onSuccess(AuthResult authResult) {
+//
+//
+//                        if (authResult.getAdditionalUserInfo().isNewUser()) {
+//                            Toast.makeText(getActivity(), "Account Created...\n" + email, Toast.LENGTH_SHORT).show();
+//                        } else {
+//
+//                            Toast.makeText(getActivity(), "Login User...\n" + email, Toast.LENGTH_SHORT).show();
+//                        }
+//                        startActivity(new Intent(getActivity(), SplashActivity.class));
+//
+//                    }
+//                })
+//                .addOnFailureListener(new OnFailureListener() {
+//                    @Override
+//                    public void onFailure(@NonNull Exception e) {
+//
+//
+//                    }
+//                });
+//    }
     private void dangnhap() {
 
             Login.setOnClickListener(new View.OnClickListener() {

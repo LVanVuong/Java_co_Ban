@@ -94,17 +94,17 @@
         app:layout_constraintTop_toBottomOf="@+id/textinput"
         app:layout_constraintVertical_bias="0.09" />
 
-    <ImageView
-        android:id="@+id/google"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="40dp"
-        android:src="@drawable/google_two"
-        app:layout_constraintVertical_bias="1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+<!--    <ImageView-->
+<!--        android:id="@+id/google"-->
+<!--        android:layout_width="45dp"-->
+<!--        android:layout_height="45dp"-->
+<!--        android:layout_marginTop="40dp"-->
+<!--        android:src="@drawable/google_two"-->
+<!--        app:layout_constraintVertical_bias="1"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.5"-->
+<!--        app:layout_constraintRight_toRightOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/button" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
